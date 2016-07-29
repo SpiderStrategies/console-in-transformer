@@ -1,4 +1,4 @@
-= Console-in Transformer
+# Console-in Transformer
 
 This helps me write code to transform the contents of a file or text from stdin
 into other text. The function returned by requires takes two arguments:
@@ -6,7 +6,7 @@ transform (required) and additionalDataTerminator (optional). The contents of th
 file or stdin will be passed to transform as a string. If additionalDataTerminator
 exists it will be appended the transformed result.
 
-== Invocation
+## Invocation
 
 This code is not usable by itself as a command but does make it easy to turn a transform
 function into a command. The commands have the form of 
