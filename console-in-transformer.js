@@ -15,6 +15,15 @@ var processInput = function(transform, additionalDataTerminator) {
 		if(process.argv[2] == '-') {
 			processStdIn(transform)
 		}
+		else if(process.argv[2][0] == '-') {
+			// This means there's an argument to the processor. Let's let them handle
+			// those.
+			
+			// This has the nice effect allowing content either piped in or allowing
+			// the user to paste in content (ctrl-d terminates).
+			printMsgIfNeeded()
+			processStdIn(transform)
+		}
 		else {
 			var data = fs.readFileSync(process.argv[2]).toString()
 			process.stdout.write(transform(data) + additionalDataTerminator);
