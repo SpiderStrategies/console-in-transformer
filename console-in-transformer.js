@@ -10,7 +10,11 @@ function printMsgIfNeeded() {
 
 var processInput = function(transform, additionalDataTerminator) {
 	additionalDataTerminator = additionalDataTerminator || ''
-	if(process.argv.length > 2) {
+	if(processInput.ignoreArguments) {
+		printMsgIfNeeded()
+		processStdIn(transform)
+	}
+	else if(process.argv.length > 2) {
 		// This means there is an argument to the command
 		if(process.argv[2] == '-') {
 			processStdIn(transform)
@@ -66,5 +70,7 @@ var processInput = function(transform, additionalDataTerminator) {
 		})
 	}
 }
+
+processInput.ignoreArguments = false
 
 module.exports = processInput

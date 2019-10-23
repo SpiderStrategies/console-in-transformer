@@ -1,6 +1,6 @@
 {
   "name": "console-in-transformer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Makes it easy to use an arbitrary function (not included here) to transform stdin or a file then write that text to std out",
   "main": "console-in-transformer.js",
   "scripts": {
