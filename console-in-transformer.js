@@ -42,11 +42,11 @@ var processInput = function(transform, additionalDataTerminator) {
 	}
 
 	function processStdIn(transform) {
+		process.stdout.write('ready->\n')
 		process.stdin.setEncoding('utf8');
 
 		var data = ''
-		process.stdin.on('readable', () => {
-			var chunk = process.stdin.read();
+		process.stdin.on('data', (chunk) => {
 			if (chunk !== null) {
 				data += chunk
 			}
